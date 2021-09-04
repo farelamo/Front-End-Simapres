@@ -1,0 +1,150 @@
+* {
+ font-family: "Roboto";
+}
+
+// navbar
+.text-nav {
+ font-size: 16px;
+ font-weight: 400;
+ margin: 0 40px 0 0;
+}
+.text-nav:hover,
+.text-nav:focus {
+ font-weight: 700;
+ color: #edac2c !important;
+}
+.text-nav:active {
+ color: #edac2c;
+}
+// typography
+.text-justify {
+ text-align: initial;
+ line-height: 1.5rem;
+}
+.link-style {
+ font-size: 14px;
+ text-decoration: none;
+ text-decoration-line: none;
+ color: white;
+}
+.link-style:hover {
+ color: #edac2c;
+}
+
+.clickable {
+ cursor: pointer;
+}
+.carousel-control-prev-icon {
+ background-image: url("../icon/chevron-left.svg");
+}
+.carousel-control-next-icon {
+ background-image: url("../icon/chevron-right.svg");
+}
+
+.carousel-item-next {
+ transition: transform 0s ease-in-out;
+}
+
+.carousel-item-prev {
+ transition: transform 0s ease-in-out;
+}
+.carousel-item-left {
+ transform: translateX(-100%);
+}
+.carousel-item-right {
+ transform: translateX(100%);
+}
+
+// timeline
+.timeline {
+ margin: 100px 60px;
+ height: 4px;
+ background-color: #ccc;
+}
+
+.timeline-progress {
+ width: 0;
+ height: 100%;
+ background-color: #edac2d;
+}
+
+.timeline-items {
+ margin-left: -10px;
+ margin-right: -10px;
+ margin-top: -12px;
+ display: flex;
+ justify-content: space-between;
+}
+
+.timeline-item {
+ position: relative;
+}
+
+.timeline-item::before {
+ content: "";
+ width: 20px;
+ height: 20px;
+ background-color: #ccc;
+ display: block;
+ border-radius: 100%;
+}
+
+.timeline-content {
+ position: absolute;
+ top: -50px;
+ left: 50%;
+ transform: translateX(-50%);
+ background-color: #ddd;
+ width: 100px;
+ padding: 5px 10px;
+ border-radius: 5px;
+ text-align: center;
+}
+
+.timeline-content::before {
+ content: "";
+ width: 10px;
+ height: 10px;
+ background-color: #ddd;
+ display: block;
+ position: absolute;
+ top: 26px;
+ margin-left: -2px;
+ left: 50%;
+ transform: rotate(-45deg) translateX(-50%);
+}
+
+.timeline-item.active::before {
+ background-color: #edac2d;
+}
+
+.timeline-item.active .timeline-content {
+ color: #fff;
+ background-color: #edac2d;
+}
+
+.timeline-item.active .timeline-content::before {
+ background-color: #edac2d;
+}
+
+// footer
+.link-linecolor {
+ border: solid 1px;
+ color: #edac2c;
+}
+.link-linecolor-secondary {
+ border: solid 1px;
+ color: #a09b9b;
+}
+.footer {
+ padding: 20px 0 0 0;
+ background-color: #253a59;
+}
+.copyright {
+ padding: 10px 0;
+ background-color: #1a2b45;
+}
+.list-contact {
+ font-size: 14px;
+ padding: 0.2rem 0 0 3rem;
+}
