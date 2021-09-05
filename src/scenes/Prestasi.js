@@ -9,7 +9,7 @@ async function API(){
     try {
         const config = {
             method: 'get',
-            url: 'http://127.0.0.1:8000/api/mahasiswa'
+            url: 'http://116.193.190.196:3000/api/mahasiswa'
         };
         const response = await axios(config);
         const data = response.data;
@@ -40,7 +40,7 @@ function Prestasi() {
     );
 
     let data = [
-        
+
     ]
 
     const columns = [
