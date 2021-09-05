@@ -13,7 +13,7 @@ async function API(){
         };
         const response = await axios(config);
         const data = response.data;
-        console.log(data[0].nim);
+        console.log(data);
         return data;
     } catch (error) {
         console.log(error);
