@@ -3,9 +3,26 @@ import { Container, Pagination, Row, Col, Button, Card } from 'react-bootstrap';
 import HeaderComponent from '../component/HeaderComponent'
 import Table from '../component/table'
 import Footer from '../parts/Footer';
+import  axios from 'axios';
 
+async function API(){
+    try {
+        const config = {
+            method: 'get',
+            url: 'http://127.0.0.1:8000/api/mahasiswa'
+        };
+        const response = await axios(config);
+        const data = response.data;
+        console.log(data[0].nim);
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 function Prestasi() {
+    API();
+
     let active = 1;
     let items = [];
     for (let number = 1; number <= 5; number++) {
@@ -21,61 +38,25 @@ function Prestasi() {
             <Pagination>{items}</Pagination>
         </>
     );
-    const data = [
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-        {
-            name: "Alfina Rizky Lestari",
-            competition: "IT bussines IDEA CODE 2020",
-            standing: " Juara 1 Tingkat Nasional  ",
-            owner: "Universitas Diponegoro",
-        },
-    ];
+
+    let data = {API()};
 
     const columns = [
         {
             Header: "Nama Mahasiswa",
-            accessor: "name",
+            accessor: "nama",
         },
         {
             Header: "Nama Lomba",
-            accessor: "competition",
+            accessor: "nama_lomba",
         },
         {
             Header: "Peringkat",
-            accessor: "standing",
+            accessor: "peringkat",
         },
         {
             Header: "Pelaksana",
-            accessor: "owner",
+            accessor: "pelaksana",
         },
         {
             Header: "",

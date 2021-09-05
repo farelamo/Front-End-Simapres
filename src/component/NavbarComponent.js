@@ -28,7 +28,9 @@ const NavbarComponent = () => {
                             <Nav.Link>Prestasi</Nav.Link>
                         </LinkContainer>
                         <Form className="form-inline">
+                        <Link to="https://116.193.190.196:3000">
                             <Button size="md" className="ps-4 pe-4">Login</Button>
+                        </Link>
                         </Form>
                     </Nav>
                 </Navbar.Collapse>
