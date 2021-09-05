@@ -9,7 +9,7 @@ async function API(){
     try {
         const config = {
             method: 'get',
-            url: 'https://116.193.190.196:3000/api/artikel'
+            url: 'https://116.193.190.196:3000/api/artikel/:id'
         };
         const response = await axios(config);
         const data = response.data;
