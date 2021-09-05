@@ -9,7 +9,7 @@ async function API(){
     try {
         const config = {
             method: 'get',
-            url: 'https://116.193.190.196:3000/api/artikel/:id'
+            url: 'https://116.193.190.196:3000/api/artikel/{id}'
         };
         const response = await axios(config);
         const data = response.data;
@@ -40,7 +40,12 @@ function Prestasi() {
     );
 
     let data = [
-
+        {
+        nama: 'haha',
+        nama_lomba: 'anjay',
+        peringkat: '2',
+        pelaksana: 'anjay'
+        }
     ]
 
     const columns = [
