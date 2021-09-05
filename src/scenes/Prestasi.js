@@ -9,7 +9,7 @@ async function API(){
     try {
         const config = {
             method: 'get',
-            url: 'https://116.193.190.196:3000/api/mahasiswa'
+            url: 'https://116.193.190.196:3000'
         };
         const response = await axios(config);
         const data = response.data;
