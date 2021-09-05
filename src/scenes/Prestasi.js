@@ -39,7 +39,9 @@ function Prestasi() {
         </>
     );
 
-    let data = {API()};
+    let data = [
+        
+    ]
 
     const columns = [
         {

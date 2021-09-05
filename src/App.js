@@ -20,7 +20,7 @@ function App() {
         <NavbarComponent />
         <main>
           <Switch>
-            <Route path="/login" exact component={login} />
+            <Route path="/https://116.193.190.196:3000" exact component={login} />
             <Route path="/" exact component={Beranda} />
             <Route path="/home" exact component={Beranda} />
             <Route path="/lomba" exact component={Lomba} />
