@@ -1,7 +1,6 @@
 import React from 'react'
 import { Nav, Navbar, Container, Form, Button } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Link } from 'react-router-dom';
 
 import logoVokasi from '../assets/images/logo vokasi.png'
 
