@@ -1,15 +1,26 @@
 import React from 'react'
-import { Container, Pagination, Row, Col, Button, Card } from 'react-bootstrap';
+import {
+    Container,
+    Pagination,
+    Row,
+    Col,
+    Button,
+    Card
+} from 'react-bootstrap';
 import HeaderComponent from '../component/HeaderComponent'
 import Table from '../component/table'
 import Footer from '../parts/Footer';
-import  axios from 'axios';
+import axios from 'axios';
 
-async function API(){
+async function API() {
     try {
         const config = {
             method: 'get',
-            url: 'http://116.193.190.196:3000/api/mahasiswa'
+            url: 'http://116.193.190.196:3000/api/mahasiswa',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            dataType: "json"
         };
         const response = await axios(config);
         const data = response.data;
@@ -20,36 +31,60 @@ async function API(){
     }
 }
 
+function haha(){
+    var url = 'http://116.193.190.196:3000/api/mahasiswa'
+    fetch(url, {
+            method: 'GET',
+            mode: 'no-cors',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        }).then(res => res.json())
+        .then(response => console.log('Success:', response))
+        .catch(error => console.error('Error:', error))
+}
+
 function Prestasi() {
+    haha();
     API();
 
     let active = 1;
     let items = [];
     for (let number = 1; number <= 5; number++) {
-        items.push(
-            <Pagination.Item className="ps-3" activeLabel={false} key={number} active={number === active}>
-                {number}
-            </Pagination.Item>
+        items.push( <
+            Pagination.Item className = "ps-3"
+            activeLabel = {
+                false
+            }
+            key = {
+                number
+            }
+            active = {
+                number === active
+            } > {
+                number
+            } <
+            /Pagination.Item>
         );
     }
 
-    const paginationBasic = (
-        <>
-            <Pagination>{items}</Pagination>
-        </>
+    const paginationBasic = ( <
+        >
+        <
+        Pagination > {
+            items
+        } < /Pagination> <
+        />
     );
 
-    let data = [
-        {
+    let data = [{
         nama: 'haha',
         nama_lomba: 'anjay',
         peringkat: '2',
         pelaksana: 'anjay'
-        }
-    ]
+    }]
 
-    const columns = [
-        {
+    const columns = [{
             Header: "Nama Mahasiswa",
             accessor: "nama",
         },
@@ -68,40 +103,70 @@ function Prestasi() {
         {
             Header: "",
             accessor: "actions",
-            Cell: ({ row }) => {
+            Cell: ({
+                row
+            }) => {
 
-                return (
-                    <>
-                        <Button variant="primary">Baca Berita</Button>
-                    </>
+                return ( <
+                    >
+                    <
+                    Button variant = "primary" > Baca Berita < /Button> <
+                    />
                 );
             },
         },
     ];
-    return (
-        <div>
-            <HeaderComponent />
-            <Container style={{ padding: "100px 0" }}>
-                <Row className="pb-4">
-                    <Col md={8} />
-                    <Col md={4}>
-                        <span className="float-end">
-                            <Button variant="primary" className="ms-2">Semua</Button>{''}
-                            <Button variant="secondary" className="ms-2">Akademik</Button>{''}
-                            <Button variant="secondary" className="ms-2">Non Akademik</Button>{''}
-                        </span>
-                        <h3 className="text-bold">Filter :</h3>
-                    </Col>
-                </Row>
-                <Card className="shadow-sm">
-                    <Table striped columns={columns} data={data} />
-                    <Col className="mx-auto">
-                        {paginationBasic}
-                    </Col>
-                </Card>
-            </Container>
-            <Footer />
-        </div>
+    return ( <
+        div >
+        <
+        HeaderComponent / >
+        <
+        Container style = {
+            {
+                padding: "100px 0"
+            }
+        } >
+        <
+        Row className = "pb-4" >
+        <
+        Col md = {
+            8
+        }
+        /> <
+        Col md = {
+            4
+        } >
+        <
+        span className = "float-end" >
+        <
+        Button variant = "primary"
+        className = "ms-2" > Semua < /Button>{''} <
+        Button variant = "secondary"
+        className = "ms-2" > Akademik < /Button>{''} <
+        Button variant = "secondary"
+        className = "ms-2" > Non Akademik < /Button>{''} <
+        /span> <
+        h3 className = "text-bold" > Filter: < /h3> <
+        /Col> <
+        /Row> <
+        Card className = "shadow-sm" >
+        <
+        Table striped columns = {
+            columns
+        }
+        data = {
+            data
+        }
+        /> <
+        Col className = "mx-auto" > {
+            paginationBasic
+        } <
+        /Col> <
+        /Card> <
+        /Container> <
+        Footer / >
+        <
+        /div>
     )
 }
 export default Prestasi
