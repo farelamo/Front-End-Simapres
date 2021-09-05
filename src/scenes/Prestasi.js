@@ -16,11 +16,7 @@ async function API() {
     try {
         const config = {
             method: 'get',
-            url: 'http://116.193.190.196:3000/api/mahasiswa',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            },
-            dataType: "json"
+            url: 'http://localhost:8000/api/mahasiswa',
         };
         const response = await axios(config);
         const data = response.data;
@@ -31,21 +27,7 @@ async function API() {
     }
 }
 
-function haha(){
-    var url = 'http://116.193.190.196:3000/api/mahasiswa'
-    fetch(url, {
-            method: 'GET',
-            mode: 'no-cors',
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        }).then(res => res.json())
-        .then(response => console.log('Success:', response))
-        .catch(error => console.error('Error:', error))
-}
-
 function Prestasi() {
-    haha();
     API();
 
     let active = 1;
